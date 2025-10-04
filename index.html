@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="glow"></div>
+  <div class="cursor-glow"></div>
+
+  <div class="container" id="welcomeContainer">
+    <h1>¡Felíz cumpleaños <span class="highlight" id="typed"></span></h1>
+    <p>Siempre buscaré la forma de hacerte sentir amada, pero ahora es momento de jugar 😈</p>
+    <button class="btn" id="startBtn">¿Estás lista? 👀🧐</button>
+  </div>
+
+  <!-- Modal Reglas Tic-Tac-Toe -->
+  <div id="rulesModal" class="modal">
+    <div class="modal-content glass">
+      <h2>Juguemos "Gato" xd</h2>
+      <br>
+      <h3>Reglas del juego:</h3>
+      <br>
+      <p>1. Haz clic en uno de los recuadros en blanco.</p><br>
+      <p>2. Serás "x" y la computadora será "O".</p><br>
+      <p>3. El primero en completar una línea, ¡Gana!</p><br>
+      <button class="btn" id="playBtn">Jugar ahora</button>
+    </div>
+  </div>
+
+  <!-- Tic-Tac-Toe Board -->
+<div id="gameContainer" class="game-container hidden">
+  <h2>Tic-Tac-Toe</h2>
+  <div id="board" class="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </div>
+  <button class="btn hidden" id="showCardBtn">Ver sorpresa</button>
+  <button class="btn hidden" id="restartBtn">Jugar de nuevo</button>
+</div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
