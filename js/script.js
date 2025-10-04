@@ -165,7 +165,7 @@ function endGame(message) {
 function checkDraw() {
   if (cells.every((c) => c.textContent !== "") && !checkWinner("X") && !checkWinner("O")) {
     endGame("Draw!")
-    alert("It's a draw! Try again 🌌")
+    alert("Qué paso master?, Cómo que empate? 👀")
   }
 }
 
