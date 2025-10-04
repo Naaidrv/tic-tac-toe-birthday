@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Reset */
 * {
@@ -9,13 +8,15 @@
 }
 
 /* Background */
+/* Cambiado overflow: hidden a overflow-x: hidden para permitir scroll vertical */
+/* Cambiado height: 100vh a min-height: 100vh para permitir contenido más largo */
 body {
-  font-family: 'Be Vietnam Pro';
+  font-family: "Be Vietnam Pro";
   background: radial-gradient(circle at bottom, #001133 0%, #000 100%);
   color: white;
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,8 +25,9 @@ body {
 }
 
 /* Stars Canvas */
+/* Cambiado position: absolute a fixed para que permanezca en su lugar durante scroll */
 #stars {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,8 +36,9 @@ body {
 }
 
 /* Glow effects */
+/* Cambiado position: absolute a fixed para que permanezca en su lugar durante scroll */
 .glow {
-  position: absolute;
+  position: fixed;
   bottom: -150px;
   left: 50%;
   transform: translateX(-50%);
@@ -88,7 +91,7 @@ p {
   background: linear-gradient(90deg, #1d43ff, #3ba9ff);
   color: white;
   font-size: 1rem;
-    font-family: 'Be Vietnam Pro';
+  font-family: "Be Vietnam Pro";
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 0 15px #1d9eff;
@@ -112,8 +115,8 @@ p {
   justify-content: center;
   z-index: 5;
   padding: 20px;
-  box-sizing: border-box; /* Agregado box-sizing para evitar overflow */
-  overflow-y: auto; /* Permitir scroll vertical si es necesario */
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .modal-content {
@@ -124,9 +127,9 @@ p {
   max-width: 600px;
   width: 100%;
   text-align: center;
-  box-sizing: border-box; /* Agregado box-sizing */
-  word-wrap: break-word; /* Permitir que el texto se ajuste */
-  overflow-wrap: break-word; /* Asegurar que palabras largas se rompan */
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hidden {
@@ -144,8 +147,8 @@ p {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  max-width: 100vw; /* Asegurar que no exceda el viewport */
-  overflow-x: hidden; /* Prevenir scroll horizontal */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .board {
@@ -162,7 +165,7 @@ p {
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
-  box-sizing: border-box; /* Agregado box-sizing */
+  box-sizing: border-box;
 }
 
 .cell {
@@ -215,6 +218,14 @@ p {
 
 /* Tablets y pantallas medianas (768px - 1024px) */
 @media (max-width: 1024px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
   .modal-content {
     max-width: 500px;
     padding: 35px;
@@ -235,24 +246,37 @@ p {
 
 /* Tablets pequeñas (600px - 768px) */
 @media (max-width: 768px) {
-  /* Ajustes más agresivos para tablets pequeñas */
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+
   .modal {
     padding: 15px;
   }
 
   .modal-content {
-    max-width: 85%;
+    width: 85%;
+    max-width: none;
     padding: 25px 20px;
-    font-size: 0.95rem;
   }
 
   .modal-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem !important;
     margin-bottom: 15px;
+    line-height: 1.3;
   }
 
   .modal-content p {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
     line-height: 1.5;
   }
 
@@ -275,26 +299,38 @@ p {
 
 /* Móviles (480px - 600px) */
 @media (max-width: 600px) {
-  /* Reducción más agresiva para móviles */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
   .modal {
     padding: 10px;
   }
 
   .modal-content {
-    max-width: 90%;
+    width: 90%;
+    max-width: none;
     padding: 20px 15px;
-    font-size: 0.9rem;
     border-radius: 15px;
   }
 
   .modal-content h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem !important;
     margin-bottom: 12px;
     line-height: 1.3;
   }
 
   .modal-content p {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
     line-height: 1.4;
     margin-bottom: 10px;
   }
@@ -316,7 +352,7 @@ p {
   #restartBtn {
     margin-top: 15px;
     padding: 10px 18px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .game-container {
@@ -326,26 +362,38 @@ p {
 
 /* Móviles pequeños (menos de 480px) */
 @media (max-width: 480px) {
-  /* Ajustes específicos para móviles pequeños */
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+  }
+
   .modal {
     padding: 8px;
   }
 
   .modal-content {
-    max-width: 92%;
+    width: 92%;
+    max-width: none;
     padding: 18px 12px;
-    font-size: 0.85rem;
     border-radius: 12px;
   }
 
   .modal-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.25rem !important;
     margin-bottom: 10px;
     line-height: 1.2;
   }
 
   .modal-content p {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
     line-height: 1.4;
     margin-bottom: 8px;
   }
@@ -371,32 +419,44 @@ p {
   #restartBtn {
     margin-top: 12px;
     padding: 8px 15px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
 /* Móviles muy pequeños (menos de 360px) */
 @media (max-width: 360px) {
-  /* Ajustes máximos para pantallas muy pequeñas */
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
   .modal {
     padding: 5px;
   }
 
   .modal-content {
-    max-width: 95%;
+    width: 95%;
+    max-width: none;
     padding: 15px 10px;
-    font-size: 0.8rem;
     border-radius: 10px;
   }
 
   .modal-content h2 {
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
     margin-bottom: 8px;
     line-height: 1.2;
   }
 
   .modal-content p {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
     line-height: 1.3;
     margin-bottom: 6px;
   }
